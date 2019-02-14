@@ -1,2 +1,2 @@
 # python-programs
-Datastructures and algorithm implementations in python along with unit tests
+Data-structure and algorithm implementations in python along with unit tests
