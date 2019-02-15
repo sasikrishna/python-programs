@@ -1,5 +1,7 @@
-
 class Stack:
+    """"
+    Stack implementation in python.
+    """
 
     def __init__(self):
         self.stack = [];
