@@ -37,5 +37,6 @@ class DoubleLinkedListTests(TestCase):
         self.assertTrue(list.remove(34))
         self.assertTrue(list.remove(68))
 
+
 if __name__ == '__main__':
     unittest_main()
