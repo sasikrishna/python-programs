@@ -13,9 +13,9 @@ def _solve_n_queens(array, queen_number):
             array[queen_number][column] = 1
             if _solve_n_queens(array, queen_number + 1):
                 return True
-            else:
-                array[queen_number][column] = 0
-                return False
+
+            array[queen_number][column] = 0
+
     return False
 
 
@@ -31,7 +31,7 @@ def _is_safe_move(array, row, column):
         if array[i][column] == 1:
             return False
 
-    # Checking upper diagonal
+    # Checking upper diagonal left side
     i, j = row, column
     while i >= 0 and j >= 0:
         if array[i][j] == 1:
@@ -39,13 +39,29 @@ def _is_safe_move(array, row, column):
         i -= 1
         j -= 1
 
-    # Checking lower diagonal
+    # Checking lower diagonal left side
     i, j = row, column
     while i < len(array) and j >= 0:
         if array[i][j] == 1:
             return False
         i += 1
         j -= 1
+
+    # Checking upper diagonal right side
+    i, j = row, column
+    while i < len(array)  and j < len(array):
+        if array[i][j] == 1:
+            return False
+        i -= 1
+        j += 1
+
+    # Checking lower diagonal right side
+    i, j = row, column
+    while i < len(array) and j < len(array):
+        if array[i][j] == 1:
+            return False
+        i += 1
+        j += 1
 
     return True
 
